@@ -1,0 +1,92 @@
+body{
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px;
+}
+#ball{
+    top:0;
+    width:100px;
+    animation: bounce 0.5s  ease-in;
+    animation-direction:alternate;
+    animation-iteration-count: infinite;
+}
+#ballShadow{
+    position: absolute;
+    left:910px;
+    height: 100px;  
+    width:100px;
+    background-color: black;
+    border-radius: 50%;
+    animation: bounceShadow 0.5s  ease-in;
+    animation-direction:alternate-reverse;
+    animation-iteration-count: infinite;
+}
+
+/* i used this code to get used to the types of animations and what they do
+img:hover{
+    height: 100px;
+    width:100px;
+    transform: translateY(310px);
+    transform: scale(3,3)
+    transform: rotate(80deg) -> rotateY(90deg) -> rotate(40deg,20deg) -> rotateZ(30deg)  *we can use combinations between transforms*
+   
+}
+*/
+hr{
+    width: 17%;
+    
+}
+.wrap{
+    margin: 0 auto;
+    width: 30%;
+    height: 400px; 
+    box-sizing: border-box;
+}
+
+.circle{
+    position: absolute;
+    top:430px;
+    left:800px;
+    text-align: center;
+    padding: 25px;
+    margin: 0 auto;
+    width: 2%;
+    color:white;
+    border-radius: 50%;
+    background-color: red;
+    cursor: pointer;
+    transition:transform .5s, background 1s 1s ease-out;
+}
+
+.circle:hover{
+    background: lightgreen;
+    transform:rotate(360deg);
+}
+/* KEYFRAMES */
+
+@keyframes bounce {
+    from { 
+        
+        -webkit-transform: translate3d(0, 0, 0); 
+        transform: translate3d(0, 0, 0);
+        transform: rotate(50deg);
+        transform: scale(-0.9);
+    }
+      to { -webkit-transform: translate3d(0, 200px, 0);
+         transform: translate3d(0, 310px, 0);
+    }
+}
+
+@keyframes bounceShadow {
+    from { 
+        
+    -webkit-transform: translate3d(0, 0, 0); 
+    transform: translate3d(0, 0, 0);
+    opacity: 0.5;
+    transform: scale(-0.9);
+}
+  to   { -webkit-transform: translate3d(0, 200px, 0);
+     transform: translate3d(0, 200px, 0);
+     opacity: 0; }
+
+}
